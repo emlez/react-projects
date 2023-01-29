@@ -1,19 +1,19 @@
-import "./App.css"
-import { useState } from "react"
-import confetti from "canvas-confetti"
+import './App.css'
+import { useState, useEffect } from 'react'
+import confetti from 'canvas-confetti'
 
-import { Square } from "./components/Square"
-import { WinnerModal } from "./components/WinnerModal"
-import { TURNS } from "./constants/constants"
-import { checkEndGame, checkWinner } from "./logic/board"
+import { Square } from './components/Square'
+import { WinnerModal } from './components/WinnerModal'
+import { TURNS } from './constants/constants'
+import { checkEndGame, checkWinner } from './logic/board'
 
-function App() {
+function App () {
   const [board, setBoard] = useState(() => {
-    const savedBoard = window.localStorage.getItem("board")
+    const savedBoard = window.localStorage.getItem('board')
     return savedBoard ? JSON.parse(savedBoard) : Array(9).fill(null)
   })
   const [turn, setTurn] = useState(() => {
-    const savedTurn = window.localStorage.getItem("turn")
+    const savedTurn = window.localStorage.getItem('turn')
     return savedTurn ?? TURNS.X
   })
   const [winner, setWinner] = useState(null)
@@ -29,8 +29,8 @@ function App() {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
     // Save current board to local storage
-    window.localStorage.setItem("board", JSON.stringify(newBoard))
-    window.localStorage.setItem("turn", newTurn)
+    window.localStorage.setItem('board', JSON.stringify(newBoard))
+    window.localStorage.setItem('turn', newTurn)
     // Check if there is a winner
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
@@ -47,14 +47,14 @@ function App() {
     setTurn(TURNS.X)
     setWinner(null)
     // Remove values from local storage
-    window.localStorage.removeItem("board")
-    window.localStorage.removeItem("turn")
+    window.localStorage.removeItem('board')
+    window.localStorage.removeItem('turn')
   }
 
   return (
-    <main className="board">
+    <main className='board'>
       <h1>Tic Tac Toe</h1>
-      <section className="game">
+      <section className='game'>
         {board.map((square, index) => {
           return (
             <Square key={index} index={index} updateBoard={updateBoard}>
@@ -63,7 +63,7 @@ function App() {
           )
         })}
       </section>
-      <section className="turn">
+      <section className='turn'>
         <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
       </section>
