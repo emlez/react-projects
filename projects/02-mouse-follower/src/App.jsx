@@ -6,11 +6,8 @@ function App () {
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    console.log('useEffect', { enabled })
-
     const handleMove = (event) => {
       const { clientX, clientY } = event
-      // console.log('handleMove', { clientX, clientY })
       setPosition({ x: clientX, y: clientY })
     }
 
@@ -23,6 +20,7 @@ function App () {
     }
   }, [enabled])
 
+  // TODO: Change the cursor to a middle finger when the mouse follower is enabled.
   return (
     <main>
       <div

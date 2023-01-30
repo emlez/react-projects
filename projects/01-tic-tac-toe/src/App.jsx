@@ -51,6 +51,13 @@ function App () {
     window.localStorage.removeItem('turn')
   }
 
+  // TODO: Implement useEffect to save the board and turn to local storage.
+  useEffect(() => {
+    window.localStorage.setItem('board', JSON.stringify(board))
+    window.localStorage.setItem('turn', turn)
+  }, [board, turn])
+
+  // TODO: Create a Connect 4 game using the same logic as Tic Tac Toe.
   return (
     <main className='board'>
       <h1>Tic Tac Toe</h1>
