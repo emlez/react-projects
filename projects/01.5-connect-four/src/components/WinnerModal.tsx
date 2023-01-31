@@ -1,7 +1,12 @@
-export function WinnerModal({ winner, resetGame }) {
+type WinnerModalProps = {
+  winner: string | null
+  resetGame: () => void
+}
+
+export function WinnerModal({ winner: winner, resetGame }: WinnerModalProps) {
   if (winner === null) return null
 
-  const winnerText = winner === false ? "It's a tie!" : "The winner is:"
+  const winnerText = winner !== "" ? "The winner is:" : "It's a tie!"
 
   return (
     <section className="winner">

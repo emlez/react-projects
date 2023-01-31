@@ -80,11 +80,10 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
-/* Create a board of Connect 4 on the .game selector */
 .game {
-  background-color: #09f;
+  background-color: #007acc;
   padding: 20px;
-  border: 20px solid #024775;
+  border: 20px solid #0283d8;
   border-radius: 10px;
 }
 
@@ -147,7 +146,7 @@ button:focus-visible {
 
 .turns.your-turn {
   color: #fff;
-  background: #09f;
+  background: #007acc;
   /* margin: 0 30px; */
 }
 
@@ -179,8 +178,6 @@ button:focus-visible {
   margin: 0 auto;
   width: -moz-fit-content;
   width: fit-content;
-  /* border: 2px solid #eee;
-  border-radius: 10px; */
   display: flex;
   gap: 15px;
 }
@@ -189,7 +186,7 @@ button:focus-visible {
 .cell {
   width: 100px;
   height: 100px;
-  border: 2px solid #eee;
+  border: 2px solid #35393b;
   border-radius: 50px;
   display: grid;
   place-items: center;

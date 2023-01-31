@@ -8,7 +8,7 @@ And the projects in the derivative directories are the ones that I have created 
 
 ## Projects
 
-1. [Twitter's *Who to follow* component](https://emlez-who-to-follow.netlify.app/)
+1. [Twitter's _Who to follow_ component](https://emlez-who-to-follow.netlify.app/)
 1. [Tic-Tac-Toe game](https://emlez-tic-tac-toe.netlify.app/)
-1. Connect 4 game - In progress...
-2. Mouse follower - In progress...
+1. [Connect 4 game](https://emlez-connect-4.netlify.app/)
+1. Mouse follower - In progress...

@@ -7,7 +7,6 @@ import "./App.css"
 import { TURNS } from "./constants/constants"
 import { checkWinner, checkDraw } from "./logic/board"
 import { WinnerModal } from "./components/WinnerModal"
-// import { Cell } from "./components/Cell"
 
 function App() {
   const [board, setBoard] = useState(() => {
@@ -66,7 +65,7 @@ function App() {
       </header>
       <main className="board">
         <section className="game">
-          {board.map((cell, index) => {
+          {board.map((cell: string | number | boolean, index: number) => {
             return (
               <div
                 key={index}
