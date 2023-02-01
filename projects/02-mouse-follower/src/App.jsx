@@ -1,6 +1,15 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 
+const CURSORS = {
+  1: 'dog',
+  2: 'cactus',
+  3: 'egg',
+  4: 'planet',
+  5: 'paint',
+  6: 'tv'
+}
+
 function App () {
   const [enabled, setEnabled] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -13,14 +22,24 @@ function App () {
 
     if (enabled) {
       window.addEventListener('pointermove', handleMove)
+      // Add random class to body, to change the cursor, choose a random class from the CURSORS object
+      document.body.classList.add(CURSORS[Math.floor(Math.random() * 6) + 1])
     }
 
     return () => {
       window.removeEventListener('pointermove', handleMove)
+      // Remove the random class from the body
+      document.body.classList.remove(
+        'dog',
+        'cactus',
+        'egg',
+        'planet',
+        'paint',
+        'tv'
+      )
     }
   }, [enabled])
 
-  // TODO: Change the cursor to a middle finger when the mouse follower is enabled.
   return (
     <main>
       <div
@@ -38,7 +57,7 @@ function App () {
           transform: `translate(${position.x}px, ${position.y}px)`
         }}
       />
-      <h3>3rd Project</h3>
+      <h3>Click on the button and move your mouse around!</h3>
       <button onClick={() => setEnabled(!enabled)}>
         {enabled ? 'Disable' : 'Enable'} mouse follower
       </button>
