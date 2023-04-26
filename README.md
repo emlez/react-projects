@@ -12,4 +12,4 @@ And the projects in the derivative directories are the ones that I have created 
 1. [Tic-Tac-Toe game](https://emlez-tic-tac-toe.netlify.app/)
 1. [Connect 4 game](https://emlez-connect-4.netlify.app/)
 1. [Mouse follower](https://emlez-mouse-follower.netlify.app/)
-1. Technical test for Jr. position - In progress...
+1. [Technical test for Jr. position](https://cat-random-image.netlify.app/)
